@@ -110,10 +110,11 @@ header{position:relative;height:100svh;min-height:640px;overflow:hidden}
 .bar-top,.bar-bot{position:absolute;left:0;right:0;z-index:40;background:var(--obsidian);height:50.5%}
 .bar-top{top:0;transform-origin:top}
 .bar-bot{bottom:0;transform-origin:bottom}
-.hero-content{position:relative;z-index:10;height:100%;display:flex;flex-direction:column;justify-content:center}
+.hero-content{position:relative;z-index:10;height:100%;display:flex;flex-direction:column;justify-content:center;padding-top:66px}
+.hero-copy,.cta-row{margin-bottom:clamp(20px,4svh,40px)}
 .hero-kicker{display:flex;align-items:center;gap:14px;margin-bottom:30px;opacity:0}
 .hero-kicker::before{content:"";width:44px;height:2px;background:var(--blood)}
-h1{font-size:clamp(3.6rem,10.5vw,9.6rem);margin-bottom:34px}
+h1{font-size:clamp(3.2rem,min(10.5vw,15svh),9.6rem);margin-bottom:clamp(18px,3.4svh,34px)}
 h1 .line{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
 h1 .ch{display:inline-block;transform:translateY(115%)}
 h1 .line.blood{color:var(--blood)}
