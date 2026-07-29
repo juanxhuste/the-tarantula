@@ -417,16 +417,23 @@ footer .sig{font-family:'Oswald',sans-serif;font-size:.64rem;letter-spacing:.22e
 
     <div class="grid">
       <article class="card" data-tilt>
-        <span class="flag">Front + Back</span>
+        <span class="flag">5 Colorways</span>
         <div class="veil"></div>
         <div class="imgbox">
-          <img src="tee_black_v2_front.webp" alt="Venom Tee, black — THE TARANTULA chest print, photoreal mockup" loading="lazy">
-          <img class="alt" src="tee_black_v2_back.webp" alt="Venom Tee, black — blue tarantula back print, VENOM IN EVERY STRIKE" loading="lazy">
+          <img id="ttvF" src="ttv_black_f.webp" alt="T.T. Venom Tee — vertical wordmark front" loading="lazy">
+          <img id="ttvB" class="alt" src="ttv_black_b.webp" alt="T.T. Venom Tee — blue tarantula back print, VENOM IN EVERY STRIKE" loading="lazy">
         </div>
         <div class="info">
-          <h3>Venom Tee · Black</h3>
+          <h3>Venom Tee</h3>
           <div class="sizes">260gsm heavyweight cotton · S-3XL</div>
-          <div class="row"><span class="price">$50</span><button class="pre" data-hover onclick="preorder('Venom Tee · Black')">Pre-Order</button></div>
+          <div class="swatches" id="ttvSw">
+            <button class="sw on" data-i="ttv_black_f.webp"  data-b="ttv_black_b.webp"  style="--sc:#141414" title="Black" aria-label="Black"></button>
+            <button class="sw" data-i="ttv_white_f.webp"  data-b="ttv_white_b.webp"  style="--sc:#f1f1ef" title="White" aria-label="White"></button>
+            <button class="sw" data-i="ttv_sky_f.webp"    data-b="ttv_sky_b.webp"    style="--sc:#a8cdea" title="Sky" aria-label="Sky"></button>
+            <button class="sw" data-i="ttv_cream_f.webp"  data-b="ttv_cream_b.webp"  style="--sc:#f2e0bd" title="Cream" aria-label="Cream"></button>
+            <button class="sw" data-i="ttv_maroon_f.webp" data-b="ttv_maroon_b.webp" style="--sc:#7c2230" title="Maroon" aria-label="Maroon"></button>
+          </div>
+          <div class="row"><span class="price">$50</span><button class="pre" data-hover onclick="preorder('Venom Tee · '+ttvColor)">Pre-Order</button></div>
         </div>
       </article>
 
@@ -919,6 +926,19 @@ var calmhColor='Black';
     e.preventDefault(); e.stopPropagation();
     sw.querySelectorAll('.sw').forEach(function(s){s.classList.remove('on')});
     el.classList.add('on'); calmhColor=el.getAttribute('title');
+    f.src=el.dataset.i; b.src=el.dataset.b;
+  });
+})();
+var ttvColor='Black';
+(function(){
+  var sw=document.getElementById('ttvSw'); if(!sw) return;
+  var f=document.getElementById('ttvF'), b=document.getElementById('ttvB');
+  sw.querySelectorAll('.sw').forEach(function(el){ new Image().src=el.dataset.i; new Image().src=el.dataset.b; });
+  sw.addEventListener('click',function(e){
+    var el=e.target.closest('.sw'); if(!el) return;
+    e.preventDefault(); e.stopPropagation();
+    sw.querySelectorAll('.sw').forEach(function(s){s.classList.remove('on')});
+    el.classList.add('on'); ttvColor=el.getAttribute('title');
     f.src=el.dataset.i; b.src=el.dataset.b;
   });
 })();
