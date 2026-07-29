@@ -568,13 +568,17 @@ footer .sig{font-family:'Oswald',sans-serif;font-size:.64rem;letter-spacing:.22e
         <span class="flag">Front + Back</span>
         <div class="veil"></div>
         <div class="imgbox">
-          <img src="hoodie_2nd_front.webp" alt="Portrait Hoodie, black — THE TARANTULA chest print" loading="lazy">
-          <img class="alt" src="hoodie_2nd_back.webp" alt="Portrait Hoodie, black — Jalin Turner portrait back print with blue tarantulas" loading="lazy">
+          <img id="calmhF" src="calmh_black_f.webp" alt="Calm Is Deadly Portrait Hoodie — CALM IS DEADLY. chest print" loading="lazy">
+          <img id="calmhB" class="alt" src="calmh_black_b.webp" alt="Calm Is Deadly Portrait Hoodie — portrait back print, VENOM IN EVERY STRIKE" loading="lazy">
         </div>
         <div class="info">
-          <h3>Portrait Hoodie · Black</h3>
+          <h3>Calm.Is.Deadly Portrait Hoodie</h3>
           <div class="sizes">350gsm fleece · S-2XL</div>
-          <div class="row"><span class="price">$65</span><button class="pre" data-hover onclick="preorder('Portrait Hoodie · Black')">Pre-Order</button></div>
+          <div class="swatches" id="calmhSw">
+            <button class="sw on" data-i="calmh_black_f.webp" data-b="calmh_black_b.webp" style="--sc:#141414" title="Black" aria-label="Black"></button>
+            <button class="sw" data-i="calmh_navy_f.webp"  data-b="calmh_navy_b.webp"  style="--sc:#2b3a52" title="Navy" aria-label="Navy"></button>
+          </div>
+          <div class="row"><span class="price">$65</span><button class="pre" data-hover onclick="preorder('Calm.Is.Deadly Portrait Hoodie · '+calmhColor)">Pre-Order</button></div>
         </div>
       </article>
 
@@ -905,6 +909,19 @@ function mkPicker(swId, imgId, setter, label){
     f.src=el.dataset.i; f.alt=label+', '+c;
   });
 }
+var calmhColor='Black';
+(function(){
+  var sw=document.getElementById('calmhSw'); if(!sw) return;
+  var f=document.getElementById('calmhF'), b=document.getElementById('calmhB');
+  sw.querySelectorAll('.sw').forEach(function(el){ new Image().src=el.dataset.i; new Image().src=el.dataset.b; });
+  sw.addEventListener('click',function(e){
+    var el=e.target.closest('.sw'); if(!el) return;
+    e.preventDefault(); e.stopPropagation();
+    sw.querySelectorAll('.sw').forEach(function(s){s.classList.remove('on')});
+    el.classList.add('on'); calmhColor=el.getAttribute('title');
+    f.src=el.dataset.i; b.src=el.dataset.b;
+  });
+})();
 var calmColor='Black';
 (function(){
   var sw=document.getElementById('calmSw'); if(!sw) return;
@@ -992,11 +1009,45 @@ function preorder(item){
   setTimeout(()=>el.focus({preventScroll:true}),700);
   el.placeholder='Reserve: '+item+' · enter your email';
 }
+/* ---- email capture -----------------------------------------------------
+   PASTE YOUR FORMSPREE ENDPOINT BELOW. Get one free at formspree.io:
+   sign up, create a form, copy the URL (looks like
+   https://formspree.io/f/xxxxxxxx) and replace the empty string.
+   Until it's filled in, addresses are stored in the browser as a fallback
+   and logged to the console so nothing is silently lost.            -------- */
+var NOTIFY_ENDPOINT = '';
+
 function notifySubmit(ev){
   ev.preventDefault();
-  document.querySelector('.form').style.display='none';
-  document.querySelector('.form-note').style.display='none';
-  document.getElementById('formok').style.display='block';
+  var el=document.getElementById('email');
+  var addr=(el && el.value || '').trim();
+  var item=(el && el.placeholder.indexOf('Reserve: ')===0)
+      ? el.placeholder.replace('Reserve: ','').split(' · ')[0] : 'General signup';
+  var payload={email:addr, interest:item, ts:new Date().toISOString()};
+
+  function done(){
+    document.querySelector('.form').style.display='none';
+    document.querySelector('.form-note').style.display='none';
+    document.getElementById('formok').style.display='block';
+  }
+
+  // always keep a local copy so a network failure never loses the address
+  try{
+    var k='tarantula_signups';
+    var arr=JSON.parse(localStorage.getItem(k)||'[]');
+    arr.push(payload); localStorage.setItem(k,JSON.stringify(arr));
+  }catch(e){}
+  console.log('SIGNUP',payload);
+
+  if(NOTIFY_ENDPOINT){
+    fetch(NOTIFY_ENDPOINT,{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify(payload)
+    }).then(done).catch(done);
+  } else {
+    done();
+  }
   return false;
 }
 </script>
