@@ -209,6 +209,11 @@ section{padding:130px 0;position:relative}
 .card:hover .imgbox img{transform:scale(1.05)}
 .card .imgbox img.alt{position:absolute;inset:0;opacity:0}
 .card:hover .imgbox img.alt{opacity:1}
+.swatches{display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 4px}
+.sw{width:20px;height:20px;border-radius:50%;background:var(--sc);border:1px solid rgba(237,231,219,.28);
+  cursor:pointer;padding:0;transition:transform .2s var(--ease),border-color .2s,box-shadow .2s}
+.sw:hover{transform:scale(1.15);border-color:rgba(237,231,219,.7)}
+.sw.on{border-color:var(--blood);box-shadow:0 0 0 2px rgba(228,83,31,.35);transform:scale(1.1)}
 .card .veil{position:absolute;inset:0;background:var(--coal);transform:scaleY(1);transform-origin:top;z-index:3}
 .card .info{padding:22px 22px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
 .card h3{font-size:1.3rem;letter-spacing:.02em}
@@ -425,17 +430,25 @@ footer .sig{font-family:'Oswald',sans-serif;font-size:.64rem;letter-spacing:.22e
         </div>
       </article>
 
-      <article class="card" data-tilt>
+      <article class="card" data-tilt id="jtcard">
         <span class="flag">7 Colorways</span>
         <div class="veil"></div>
         <div class="imgbox">
-          <img src="jt_front.webp" alt="JT SnowWashed Oversized Tee, black — JT crest and spider chest print" loading="lazy">
-          <img class="alt" src="jt_back.webp" alt="JT SnowWashed Oversized Tee, black — back view" loading="lazy">
-        </div>
+          <img id="jtF" src="jt_black_f.webp" alt="JT SnowWashed Oversized Tee — JT crest and spider chest print" loading="lazy">
+          </div>
         <div class="info">
           <h3>JT SnowWashed Tee</h3>
-          <div class="sizes">Oversized vintage wash · 7 colors · S-3XL</div>
-          <div class="row"><span class="price">$40</span><button class="pre" data-hover onclick="preorder('JT SnowWashed Tee')">Pre-Order</button></div>
+          <div class="sizes">Oversized vintage wash · S-3XL</div>
+          <div class="swatches" id="jtSw">
+            <button class="sw on" data-c="black"      style="--sc:#141414" title="Black" aria-label="Black"></button>
+            <button class="sw"    data-c="khakiash"   style="--sc:#d9cbb8" title="Khaki Ash" aria-label="Khaki Ash"></button>
+            <button class="sw"    data-c="lightgray"  style="--sc:#c9cbc9" title="Light Gray" aria-label="Light Gray"></button>
+            <button class="sw"    data-c="red"        style="--sc:#8f3a48" title="Red" aria-label="Red"></button>
+            <button class="sw"    data-c="darkblue"   style="--sc:#3f5f8f" title="Dark Blue" aria-label="Dark Blue"></button>
+            <button class="sw"    data-c="pirategray" style="--sc:#5a5f60" title="Pirate Gray" aria-label="Pirate Gray"></button>
+            <button class="sw"    data-c="apricot"    style="--sc:#d6c0a4" title="Apricot" aria-label="Apricot"></button>
+          </div>
+          <div class="row"><span class="price">$40</span><button class="pre" data-hover onclick="preorder('JT SnowWashed Tee · '+jtColor)">Pre-Order</button></div>
         </div>
       </article>
 
@@ -454,28 +467,26 @@ footer .sig{font-family:'Oswald',sans-serif;font-size:.64rem;letter-spacing:.22e
       </article>
 
       <article class="card" data-tilt>
+        <span class="flag">6 Colorways</span>
         <div class="veil"></div>
         <div class="imgbox">
-          <img src="tee_black_v2_front.webp" alt="Signature Tee, black — THE TARANTULA white wordmark chest print" loading="lazy">
+          <img id="sigF" src="tee_black_v2_front.webp" alt="Signature Tee — THE TARANTULA wordmark chest print" loading="lazy">
         </div>
         <div class="info">
-          <h3>Signature Tee · Black</h3>
+          <h3>Signature Tee</h3>
           <div class="sizes">260gsm heavyweight cotton · S-3XL</div>
-          <div class="row"><span class="price">$40</span><button class="pre" data-hover onclick="preorder('Signature Tee · Black')">Pre-Order</button></div>
+          <div class="swatches" id="sigSw">
+            <button class="sw on" data-i="tee_black_v2_front.webp" style="--sc:#141414" title="Black" aria-label="Black"></button>
+            <button class="sw" data-i="sig_white_f.webp"    style="--sc:#f1f1ef" title="White" aria-label="White"></button>
+            <button class="sw" data-i="sig_cream_f.webp"    style="--sc:#f0dfc0" title="Cream" aria-label="Cream"></button>
+            <button class="sw" data-i="sig_sky_f.webp"      style="--sc:#a8cdea" title="Sky" aria-label="Sky"></button>
+            <button class="sw" data-i="sig_graphite_f.webp" style="--sc:#5e6265" title="Graphite" aria-label="Graphite"></button>
+            <button class="sw" data-i="sig_brown_f.webp"    style="--sc:#5c3f31" title="Brown" aria-label="Brown"></button>
+          </div>
+          <div class="row"><span class="price">$40</span><button class="pre" data-hover onclick="preorder('Signature Tee · '+sigColor)">Pre-Order</button></div>
         </div>
       </article>
 
-      <article class="card" data-tilt>
-        <div class="veil"></div>
-        <div class="imgbox">
-          <img src="tee_bone.webp" alt="Signature Tee, white — THE TARANTULA chest print in black ink" loading="lazy">
-        </div>
-        <div class="info">
-          <h3>Signature Tee · White</h3>
-          <div class="sizes">260gsm heavyweight cotton · S-3XL</div>
-          <div class="row"><span class="price">$40</span><button class="pre" data-hover onclick="preorder('Signature Tee · White')">Pre-Order</button></div>
-        </div>
-      </article>
 
       <article class="card" data-tilt>
         <div class="veil"></div>
@@ -815,6 +826,48 @@ if (!reduced && !(navigator.connection && navigator.connection.saveData)){
   document.querySelector('.hero-bg').appendChild(v);
   v.play().catch(()=>{});
 }
+
+/* ---------- JT colorway picker ---------- */
+var jtColor='Black';
+(function(){
+  var sw=document.getElementById('jtSw'); if(!sw) return;
+  var f=document.getElementById('jtF');
+  // preload so swaps are instant
+  sw.querySelectorAll('.sw').forEach(function(el){
+    var c=el.dataset.c;
+    new Image().src='jt_'+c+'_f.webp';
+    
+  });
+  sw.addEventListener('click',function(e){
+    var el=e.target.closest('.sw'); if(!el) return;
+    e.preventDefault(); e.stopPropagation();
+    sw.querySelectorAll('.sw').forEach(function(s){s.classList.remove('on')});
+    el.classList.add('on');
+    var c=el.dataset.c;
+    jtColor=el.getAttribute('title');
+    f.src='jt_'+c+'_f.webp';
+    b.src='jt_'+c+'_b.webp';
+    f.alt='JT SnowWashed Oversized Tee, '+jtColor+' — front';
+    
+  });
+})();
+
+/* ---------- Signature colorway picker ---------- */
+var sigColor='Black';
+(function(){
+  var sw=document.getElementById('sigSw'); if(!sw) return;
+  var f=document.getElementById('sigF');
+  sw.querySelectorAll('.sw').forEach(function(el){ new Image().src=el.dataset.i; });
+  sw.addEventListener('click',function(e){
+    var el=e.target.closest('.sw'); if(!el) return;
+    e.preventDefault(); e.stopPropagation();
+    sw.querySelectorAll('.sw').forEach(function(s){s.classList.remove('on')});
+    el.classList.add('on');
+    sigColor=el.getAttribute('title');
+    f.src=el.dataset.i;
+    f.alt='Signature Tee, '+sigColor+' — THE TARANTULA wordmark chest print';
+  });
+})();
 
 /* ---------- custom cursor ---------- */
 if (matchMedia('(pointer:fine)').matches && !reduced){
