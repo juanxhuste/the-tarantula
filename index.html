@@ -239,10 +239,22 @@ section{padding:130px 0;position:relative}
 .bundle h3{font-size:clamp(1.9rem,3.6vw,3rem);margin-bottom:14px}
 .bundle p{color:var(--bone-dim);max-width:44ch;margin-bottom:28px}
 .bundle .imgs{display:grid;grid-template-columns:1fr 1fr;gap:2px;padding:2px}
-.bundle .imgs img{width:100%;aspect-ratio:1/1;object-fit:cover;background:#0e0e11}
-.bundle .imgs img:last-child{grid-column:1/-1;aspect-ratio:2/1}
+.bundle .imgs img{width:100%;aspect-ratio:1/1;object-fit:cover;background:#fff}
+.bundle .imgs img:last-child{grid-column:2;grid-row:1/span 2;aspect-ratio:auto;height:100%}
 .bundle .price{font-size:2.3rem;margin-right:18px}
 .strike{color:var(--bone-dim);text-decoration:line-through;font-family:'Anton',sans-serif;font-size:1.2rem}
+.blist{list-style:none;margin:0 0 26px;padding:0;max-width:34ch}
+.blist li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+  padding:11px 0;border-bottom:1px solid rgba(237,231,219,.10);
+  font-size:.94rem;letter-spacing:.01em;color:var(--bone)}
+.blist li span:last-child{color:var(--bone-dim);font-variant-numeric:tabular-nums;white-space:nowrap}
+.blist li.tot{border-bottom:0;padding-top:14px;color:var(--bone-dim);
+  text-transform:uppercase;letter-spacing:.12em;font-size:.72rem}
+.save{display:inline-block;margin-left:14px;padding:5px 11px;border-radius:999px;
+  background:rgba(228,83,31,.14);border:1px solid rgba(228,83,31,.45);color:var(--blood);
+  font-family:'Anton',sans-serif;font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;
+  white-space:nowrap;transform:translateY(-4px)}
+.bnote{margin-top:18px;font-size:.8rem;color:var(--bone-dim);letter-spacing:.03em}
 
 /* ============ STATS + PINNED CLOCK ============ */
 #stats{overflow:hidden}
@@ -622,17 +634,24 @@ footer .sig{font-family:'Oswald',sans-serif;font-size:.64rem;letter-spacing:.22e
 
       <article class="bundle reveal">
         <div class="pad">
-          <div class="kicker" style="margin-bottom:14px">Everything · One Order</div>
+          <div class="kicker" style="margin-bottom:14px">The Whole Drop · One Order</div>
           <h3>The Full Capsule</h3>
-          <p>Black tee, white tee, and the hoodie in one order. $35 less than buying the pieces separately.</p>
+          <p>Both tees and the Venom hoodie. One print run, then the plates come down — this is the only window to own the full set.</p>
+          <ul class="blist">
+            <li><span>Venom Tee · Black</span><span>$50</span></li>
+            <li><span>Venom Tee · White</span><span>$50</span></li>
+            <li><span>Venom Hoodie · Black</span><span>$65</span></li>
+            <li class="tot"><span>Bought separately</span><span class="strike">$165</span></li>
+          </ul>
           <div style="display:flex;align-items:baseline;margin-bottom:28px">
-            <span class="price">$110</span><span class="strike">$145</span>
+            <span class="price">$110</span><span class="save">You save $55</span>
           </div>
           <button class="btn btn-solid" data-hover data-magnet onclick="preorder('The Full Capsule')"><span>Reserve The Set</span></button>
+          <div class="bnote">Nothing charged today — you're holding a slot in the run. Sizes confirmed when checkout opens.</div>
         </div>
         <div class="imgs" aria-hidden="true">
-          <img src="tee_black_v2_front.webp" alt="" loading="lazy">
-          <img src="tee_bone.webp" alt="" loading="lazy">
+          <img src="ttv_black_f.webp" alt="" loading="lazy">
+          <img src="ttv_white_f.webp" alt="" loading="lazy">
           <img src="vh_black_b.webp" alt="" loading="lazy">
         </div>
       </article>
