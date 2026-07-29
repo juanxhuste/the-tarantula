@@ -460,16 +460,21 @@ footer .sig{font-family:'Oswald',sans-serif;font-size:.64rem;letter-spacing:.22e
       </article>
 
       <article class="card" data-tilt>
-        <span class="flag">Front + Back</span>
+        <span class="flag">3 Colorways</span>
         <div class="veil"></div>
         <div class="imgbox">
-          <img src="hoodie_v2_front.webp" alt="Venom Hoodie, black — THE TARANTULA chest print" loading="lazy">
-          <img class="alt" src="hoodie_v2_back.webp" alt="Venom Hoodie — blue tarantula back print, VENOM IN EVERY STRIKE" loading="lazy">
+          <img id="vhF" src="vh_black_f.webp" alt="Venom Hoodie, black — vertical THE TARANTULA chest print" loading="lazy">
+          <img id="vhB" class="alt" src="vh_black_b.webp" alt="Venom Hoodie, black — blue tarantula back print, VENOM IN EVERY STRIKE" loading="lazy">
         </div>
         <div class="info">
-          <h3>Venom Hoodie · Black</h3>
-          <div class="sizes">350gsm fleece · S-2XL</div>
-          <div class="row"><span class="price">$65</span><button class="pre" data-hover onclick="preorder('Venom Hoodie · Black')">Pre-Order</button></div>
+          <h3>Venom Hoodie</h3>
+          <div class="sizes">350gsm oversized fleece · S-2XL</div>
+          <div class="swatches" id="vhSw">
+            <button class="sw on" data-i="vh_black_f.webp" data-b="vh_black_b.webp" style="--sc:#141414" title="Black" aria-label="Black"></button>
+            <button class="sw" data-i="vh_white_f.webp" data-b="vh_white_b.webp" style="--sc:#f4f4f2" title="White" aria-label="White"></button>
+            <button class="sw" data-i="vh_grey_f.webp" data-b="vh_grey_b.webp" style="--sc:#cfcfcf" title="Heather Grey" aria-label="Heather Grey"></button>
+          </div>
+          <div class="row"><span class="price">$65</span><button class="pre" data-hover onclick="preorder('Venom Hoodie · '+vhColor)">Pre-Order</button></div>
         </div>
       </article>
 
@@ -628,7 +633,7 @@ footer .sig{font-family:'Oswald',sans-serif;font-size:.64rem;letter-spacing:.22e
         <div class="imgs" aria-hidden="true">
           <img src="tee_black_v2_front.webp" alt="" loading="lazy">
           <img src="tee_bone.webp" alt="" loading="lazy">
-          <img src="hoodie_v2_back.webp" alt="" loading="lazy">
+          <img src="vh_black_b.webp" alt="" loading="lazy">
         </div>
       </article>
     </div>
@@ -953,6 +958,21 @@ var calmColor='Black';
     sw.querySelectorAll('.sw').forEach(function(s){s.classList.remove('on')});
     el.classList.add('on'); calmColor=el.getAttribute('title');
     f.src=el.dataset.i; b.src=el.dataset.b;
+  });
+})();
+var vhColor='Black';
+(function(){
+  var sw=document.getElementById('vhSw'); if(!sw) return;
+  var f=document.getElementById('vhF'), b=document.getElementById('vhB');
+  sw.querySelectorAll('.sw').forEach(function(el){ new Image().src=el.dataset.i; new Image().src=el.dataset.b; });
+  sw.addEventListener('click',function(e){
+    var el=e.target.closest('.sw'); if(!el) return;
+    e.preventDefault(); e.stopPropagation();
+    sw.querySelectorAll('.sw').forEach(function(s){s.classList.remove('on')});
+    el.classList.add('on'); vhColor=el.getAttribute('title');
+    f.src=el.dataset.i; b.src=el.dataset.b;
+    f.alt='Venom Hoodie, '+vhColor+' — vertical THE TARANTULA chest print';
+    b.alt='Venom Hoodie, '+vhColor+' — blue tarantula back print, VENOM IN EVERY STRIKE';
   });
 })();
 mkPicker('sigWSw','sigWF',function(c){sigWColor=c},'Signature Tee White Ink');
