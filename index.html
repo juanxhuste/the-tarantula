@@ -42,15 +42,15 @@ html.lenis{height:auto}
 .lenis.lenis-smooth{scroll-behavior:auto}
 body{
   background:var(--obsidian);color:var(--bone);
-  font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;
+  font-family:'Inter', sans-serif;font-size:16px;line-height:1.6;
   -webkit-font-smoothing:antialiased;overflow-x:hidden;
 }
 body.locked{overflow:hidden}
 ::selection{background:var(--blood);color:var(--obsidian)}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
-h1,h2,h3,.display{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;line-height:.9;letter-spacing:.005em}
-.kicker{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.32em;font-size:.7rem;color:var(--blood)}
+h1, h2, h3,.display{font-family:'Anton', sans-serif;font-weight:400;text-transform:uppercase;line-height:.9;letter-spacing:.005em}
+.kicker{font-family:'Oswald', sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.32em;font-size:.7rem;color:var(--blood)}
 .wrap{max-width:1280px;margin:0 auto;padding:0 28px}
 button{font:inherit;cursor:pointer}
 :focus-visible{outline:2px solid var(--blood);outline-offset:3px}
@@ -61,7 +61,7 @@ body::after{
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
   animation:grain 7s steps(10) infinite;
 }
-.vignette{position:fixed;inset:0;z-index:94;pointer-events:none;background:radial-gradient(ellipse at center,transparent 62%,rgba(0,0,0,.42) 100%)}
+.vignette{position:fixed;inset:0;z-index:94;pointer-events:none;background:radial-gradient(ellipse at center, transparent 62%, rgba(0,0,0,.42) 100%)}
 @keyframes grain{
   0%,100%{transform:translate(0,0)}10%{transform:translate(-3%,2%)}30%{transform:translate(2%,-4%)}
   50%{transform:translate(-4%,-2%)}70%{transform:translate(3%,3%)}90%{transform:translate(-2%,4%)}
@@ -75,18 +75,18 @@ body::after{
 #loader img{height:34px;width:auto;opacity:0;animation:fadein .8s .2s var(--ease) forwards}
 @keyframes fadein{to{opacity:1}}
 #loader .count{
-  font-family:'Anton',sans-serif;font-size:clamp(3rem,8vw,6rem);line-height:1;color:var(--bone);
+  font-family:'Anton', sans-serif;font-size:clamp(3rem,8vw,6rem);line-height:1;color:var(--bone);
   font-variant-numeric:tabular-nums;
 }
 #loader .lbar{width:min(320px,60vw);height:2px;background:rgba(237,231,219,.12);position:relative;overflow:hidden}
 #loader .lbar i{position:absolute;inset:0;background:var(--blood);transform:scaleX(0);transform-origin:left}
-#loader .ltag{font-family:'Oswald',sans-serif;font-size:.64rem;letter-spacing:.34em;text-transform:uppercase;color:var(--bone-dim)}
+#loader .ltag{font-family:'Oswald', sans-serif;font-size:.64rem;letter-spacing:.34em;text-transform:uppercase;color:var(--bone-dim)}
 
 /* ============ CURSOR ============ */
 .cursor,.cursor-dot{position:fixed;top:0;left:0;pointer-events:none;z-index:150;border-radius:50%;display:none}
 @media (pointer:fine){
   .cursor,.cursor-dot{display:block}
-  .cursor{width:38px;height:38px;border:1px solid rgba(237,231,219,.5);transition:width .3s var(--ease),height .3s var(--ease),border-color .3s}
+  .cursor{width:38px;height:38px;border:1px solid rgba(237,231,219,.5);transition:width .3s var(--ease), height .3s var(--ease), border-color .3s}
   .cursor.hot{width:64px;height:64px;border-color:var(--blood)}
   .cursor-dot{width:5px;height:5px;background:var(--blood)}
 }
@@ -102,8 +102,8 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .nav-logo img{height:24px;width:auto}
 .nav-links{display:flex;gap:30px;align-items:center}
 .nav-links a{
-  font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;
-  letter-spacing:.16em;font-size:.74rem;opacity:.8;transition:opacity .25s,color .25s;
+  font-family:'Oswald', sans-serif;font-weight:600;text-transform:uppercase;
+  letter-spacing:.16em;font-size:.74rem;opacity:.8;transition:opacity .25s, color .25s;
 }
 .nav-links a:hover{opacity:1;color:var(--blood)}
 .nav-cta{
@@ -114,15 +114,15 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .burger{display:none;background:none;border:none;color:var(--bone);font-size:1.5rem;line-height:1}
 .venom-bar{position:fixed;top:0;left:0;height:2px;width:0;background:var(--blood);z-index:65;box-shadow:0 0 12px rgba(228,83,31,.8)}
 
-/* ============ HERO — full-bleed cinematic ============ */
+/* ============ HERO, full-bleed cinematic ============ */
 header{position:relative;height:100svh;min-height:640px;overflow:hidden}
 .hero-bg{position:absolute;inset:-6% 0;z-index:1;will-change:transform}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:72% 18%}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 32%;opacity:0;transition:opacity 1.4s var(--ease)}
 .hero-video.on{opacity:1}
 .hero-scrim{position:absolute;inset:0;z-index:2;background:
-  linear-gradient(90deg,rgba(11,11,13,.92) 0%,rgba(11,11,13,.72) 34%,rgba(11,11,13,.25) 62%,rgba(11,11,13,.45) 100%)}
-.hero-scrim::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,var(--obsidian) 0%,transparent 26%)}
+  linear-gradient(90deg, rgba(11,11,13,.92) 0%, rgba(11,11,13,.72) 34%, rgba(11,11,13,.25) 62%, rgba(11,11,13,.45) 100%)}
+.hero-scrim::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg, var(--obsidian) 0%, transparent 26%)}
 .bar-top,.bar-bot{position:absolute;left:0;right:0;z-index:40;background:var(--obsidian);height:50.5%}
 .bar-top{top:0;transform-origin:top}
 .bar-bot{bottom:0;transform-origin:bottom}
@@ -130,7 +130,7 @@ header{position:relative;height:100svh;min-height:640px;overflow:hidden}
 .hero-copy,.cta-row{margin-bottom:clamp(20px,4svh,40px)}
 .hero-kicker{display:flex;align-items:center;gap:14px;margin-bottom:30px;opacity:0}
 .hero-kicker::before{content:"";width:44px;height:2px;background:var(--blood)}
-h1{font-size:clamp(3.2rem,min(10.5vw,15svh),9.6rem);margin-bottom:clamp(18px,3.4svh,34px)}
+h1{font-size:clamp(3.2rem, min(10.5vw,15svh),9.6rem);margin-bottom:clamp(18px,3.4svh,34px)}
 h1 .line{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
 h1 .ch{display:inline-block;transform:translateY(115%)}
 h1 .line.blood{color:var(--blood)}
@@ -139,8 +139,8 @@ h1 .line.blood{color:var(--blood)}
 .cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:48px;opacity:0}
 .btn{
   display:inline-flex;align-items:center;gap:10px;position:relative;overflow:hidden;
-  font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.14em;font-size:.82rem;
-  padding:17px 32px;border:1px solid var(--bone);transition:color .35s var(--ease),border-color .35s var(--ease);
+  font-family:'Oswald', sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.14em;font-size:.82rem;
+  padding:17px 32px;border:1px solid var(--bone);transition:color .35s var(--ease), border-color .35s var(--ease);
   border-radius:var(--radius);will-change:transform;
 }
 .btn span{position:relative;z-index:2}
@@ -149,18 +149,18 @@ h1 .line.blood{color:var(--blood)}
 .btn:hover{color:var(--obsidian)}
 .btn-solid{background:var(--blood);border-color:var(--blood);color:var(--obsidian)}
 .hero-meta{display:flex;gap:36px;flex-wrap:wrap;opacity:0}
-.hero-meta div{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.18em;font-size:.66rem;color:var(--bone-dim)}
+.hero-meta div{font-family:'Oswald', sans-serif;text-transform:uppercase;letter-spacing:.18em;font-size:.66rem;color:var(--bone-dim)}
 .hero-meta b{display:block;color:var(--bone);font-size:.8rem;letter-spacing:.22em;margin-bottom:2px}
 .scroll-cue{
   position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:10;
-  font-family:'Oswald',sans-serif;font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:var(--bone-dim);
+  font-family:'Oswald', sans-serif;font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:var(--bone-dim);
   display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0;
 }
-.scroll-cue i{width:1px;height:44px;background:linear-gradient(var(--bone),transparent);display:block;animation:drip 2s var(--ease) infinite}
+.scroll-cue i{width:1px;height:44px;background:linear-gradient(var(--bone), transparent);display:block;animation:drip 2s var(--ease) infinite}
 @keyframes drip{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 .hero-credit{
   position:absolute;right:28px;bottom:26px;z-index:10;writing-mode:vertical-rl;
-  font-family:'Oswald',sans-serif;font-size:.6rem;letter-spacing:.34em;text-transform:uppercase;color:var(--bone-dim);opacity:0;
+  font-family:'Oswald', sans-serif;font-size:.6rem;letter-spacing:.34em;text-transform:uppercase;color:var(--bone-dim);opacity:0;
 }
 
 /* ============ TICKER ============ */
@@ -170,7 +170,7 @@ h1 .line.blood{color:var(--blood)}
 }
 .ticker-track{display:flex;width:max-content;animation:ticker 26s linear infinite}
 .ticker span{
-  font-family:'Anton',sans-serif;text-transform:uppercase;font-size:1.1rem;letter-spacing:.06em;
+  font-family:'Anton', sans-serif;text-transform:uppercase;font-size:1.1rem;letter-spacing:.06em;
   padding:0 26px;white-space:nowrap;
 }
 .ticker span::after{content:"✕";margin-left:52px;font-size:.8em}
@@ -180,11 +180,11 @@ h1 .line.blood{color:var(--blood)}
 section{padding:130px 0;position:relative}
 .scene-tag{
   position:absolute;top:44px;left:28px;
-  font-family:'Oswald',sans-serif;font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:var(--bone-dim);
+  font-family:'Oswald', sans-serif;font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:var(--bone-dim);
 }
 .idx{
   position:absolute;top:10px;right:0;z-index:0;pointer-events:none;
-  font-family:'Anton',sans-serif;font-size:clamp(8rem,22vw,20rem);line-height:1;color:transparent;
+  font-family:'Anton', sans-serif;font-size:clamp(8rem,22vw,20rem);line-height:1;color:transparent;
   -webkit-text-stroke:1px rgba(237,231,219,.07);
 }
 .sec-head{margin-bottom:64px;max-width:760px;position:relative;z-index:2}
@@ -205,30 +205,30 @@ section{padding:130px 0;position:relative}
 }
 .card:hover{border-color:rgba(237,231,219,.4)}
 .card .imgbox{position:relative;overflow:hidden;aspect-ratio:1/1;background:#0e0e11}
-.card .imgbox img{width:100%;height:100%;object-fit:cover;transition:opacity .5s var(--ease),transform .8s var(--ease)}
+.card .imgbox img{width:100%;height:100%;object-fit:cover;transition:opacity .5s var(--ease), transform .8s var(--ease)}
 .card:hover .imgbox img{transform:scale(1.05)}
 .card .imgbox img.alt{position:absolute;inset:0;opacity:0}
 .card:hover .imgbox img.alt{opacity:1}
 .swatches{display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 4px}
 .sw{width:20px;height:20px;border-radius:50%;background:var(--sc);border:1px solid rgba(237,231,219,.28);
-  cursor:pointer;padding:0;transition:transform .2s var(--ease),border-color .2s,box-shadow .2s}
+  cursor:pointer;padding:0;transition:transform .2s var(--ease), border-color .2s, box-shadow .2s}
 .sw:hover{transform:scale(1.15);border-color:rgba(237,231,219,.7)}
 .sw.on{border-color:var(--blood);box-shadow:0 0 0 2px rgba(228,83,31,.35);transform:scale(1.1)}
 .card .veil{position:absolute;inset:0;background:var(--coal);transform:scaleY(1);transform-origin:top;z-index:3}
 .card .info{padding:22px 22px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
 .card h3{font-size:1.3rem;letter-spacing:.02em}
-.card .sizes{font-family:'Oswald',sans-serif;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bone-dim)}
+.card .sizes{font-family:'Oswald', sans-serif;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bone-dim)}
 .card .row{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:12px}
-.price{font-family:'Anton',sans-serif;font-size:1.55rem;color:var(--blood)}
+.price{font-family:'Anton', sans-serif;font-size:1.55rem;color:var(--blood)}
 .card .pre{
-  font-family:'Oswald',sans-serif;font-weight:600;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;
+  font-family:'Oswald', sans-serif;font-weight:600;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;
   background:none;border:1px solid var(--line);color:var(--bone);padding:11px 17px;
   transition:all .3s var(--ease);border-radius:var(--radius);
 }
 .card .pre:hover{background:var(--blood);border-color:var(--blood);color:var(--obsidian)}
 .card .flag{
   position:absolute;top:14px;left:14px;z-index:4;
-  font-family:'Oswald',sans-serif;font-weight:700;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;
+  font-family:'Oswald', sans-serif;font-weight:700;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;
   background:var(--bone);color:var(--obsidian);padding:5px 10px;border-radius:4px;
 }
 .bundle{
@@ -242,7 +242,7 @@ section{padding:130px 0;position:relative}
 .bundle .imgs img{width:100%;aspect-ratio:1/1;object-fit:cover;background:#fff}
 .bundle .imgs img:last-child{grid-column:2;grid-row:1/span 2;aspect-ratio:auto;height:100%;object-fit:contain}
 .bundle .price{font-size:2.3rem;margin-right:18px}
-.strike{color:var(--bone-dim);text-decoration:line-through;font-family:'Anton',sans-serif;font-size:1.2rem}
+.strike{color:var(--bone-dim);text-decoration:line-through;font-family:'Anton', sans-serif;font-size:1.2rem}
 .blist{list-style:none;margin:0 0 26px;padding:0;max-width:34ch}
 .blist li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;
   padding:11px 0;border-bottom:1px solid rgba(237,231,219,.10);
@@ -252,7 +252,7 @@ section{padding:130px 0;position:relative}
   text-transform:uppercase;letter-spacing:.12em;font-size:.72rem}
 .save{display:inline-block;margin-left:14px;padding:5px 11px;border-radius:999px;
   background:rgba(228,83,31,.14);border:1px solid rgba(228,83,31,.45);color:var(--blood);
-  font-family:'Anton',sans-serif;font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;
+  font-family:'Anton', sans-serif;font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;
   white-space:nowrap;transform:translateY(-4px)}
 .bnote{margin-top:18px;font-size:.8rem;color:var(--bone-dim);letter-spacing:.03em}
 
@@ -262,21 +262,21 @@ section{padding:130px 0;position:relative}
 .stat{border:1px solid var(--line);padding:36px 28px;position:relative;overflow:hidden;background:var(--obsidian);border-radius:var(--radius)}
 .stat::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:var(--blood);transform:scaleX(0);transform-origin:left;transition:transform 1.2s var(--ease)}
 .stat.in::before{transform:scaleX(1)}
-.stat .num{font-family:'Anton',sans-serif;font-size:clamp(2.8rem,5vw,4.6rem);line-height:1;color:var(--bone);font-variant-numeric:tabular-nums}
+.stat .num{font-family:'Anton', sans-serif;font-size:clamp(2.8rem,5vw,4.6rem);line-height:1;color:var(--bone);font-variant-numeric:tabular-nums}
 .stat .num small{font-size:.45em;color:var(--blood)}
-.stat .lbl{font-family:'Oswald',sans-serif;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--bone-dim);margin-top:12px}
+.stat .lbl{font-family:'Oswald', sans-serif;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--bone-dim);margin-top:12px}
 /* pinned clock scene */
 .clock-scene{position:relative}
 .clock{border:1px solid var(--line);padding:52px 46px;background:var(--obsidian);position:relative;overflow:hidden;border-radius:var(--radius-lg)}
 .clock .top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px;margin-bottom:28px}
 .clock h3{font-size:clamp(1.7rem,3.4vw,2.6rem)}
-.clock .t{font-family:'Anton',sans-serif;font-size:clamp(3rem,7vw,5.4rem);color:var(--blood);font-variant-numeric:tabular-nums;line-height:1}
+.clock .t{font-family:'Anton', sans-serif;font-size:clamp(3rem,7vw,5.4rem);color:var(--blood);font-variant-numeric:tabular-nums;line-height:1}
 .clock .bar{height:12px;background:rgba(237,231,219,.08);position:relative;border-radius:999px;overflow:hidden}
 .clock .bar i{position:absolute;top:0;left:0;bottom:0;width:0;background:var(--blood)}
-.clock .scale{display:flex;justify-content:space-between;font-family:'Oswald',sans-serif;font-size:.62rem;letter-spacing:.18em;color:var(--bone-dim);margin-top:12px;text-transform:uppercase}
+.clock .scale{display:flex;justify-content:space-between;font-family:'Oswald', sans-serif;font-size:.62rem;letter-spacing:.18em;color:var(--bone-dim);margin-top:12px;text-transform:uppercase}
 .clock .cap{margin-top:22px;color:var(--bone-dim);font-size:.95rem;max-width:62ch}
 .clock .cap strong{color:var(--bone)}
-.clock .scrub-hint{position:absolute;top:20px;right:22px;font-family:'Oswald',sans-serif;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--bone-dim)}
+.clock .scrub-hint{position:absolute;top:20px;right:22px;font-family:'Oswald', sans-serif;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--bone-dim)}
 
 /* ============ STORY ============ */
 #story{background:var(--coal);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
@@ -288,10 +288,10 @@ section{padding:130px 0;position:relative}
 .story-art img.spider{width:80%;max-width:450px;opacity:.92;filter:drop-shadow(0 30px 60px rgba(0,0,0,.6));will-change:transform}
 .story-art .count{
   position:absolute;bottom:0;right:0;text-align:right;
-  font-family:'Anton',sans-serif;font-size:clamp(3.6rem,7.5vw,6.6rem);line-height:.9;color:transparent;
+  font-family:'Anton', sans-serif;font-size:clamp(3.6rem,7.5vw,6.6rem);line-height:.9;color:transparent;
   -webkit-text-stroke:1px rgba(237,231,219,.5);will-change:transform;
 }
-.story-art .count em{display:block;font-family:'Oswald',sans-serif;font-style:normal;font-size:.72rem;letter-spacing:.3em;-webkit-text-stroke:0;color:var(--blood);margin-top:12px;text-transform:uppercase}
+.story-art .count em{display:block;font-family:'Oswald', sans-serif;font-style:normal;font-size:.72rem;letter-spacing:.3em;-webkit-text-stroke:0;color:var(--blood);margin-top:12px;text-transform:uppercase}
 
 /* ============ NOTIFY ============ */
 #notify{text-align:center;padding:160px 0}
@@ -305,19 +305,19 @@ section{padding:130px 0;position:relative}
 .form input:focus{outline:none}
 .form button{
   background:var(--blood);border:none;color:var(--obsidian);
-  font-family:'Oswald',sans-serif;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.78rem;
+  font-family:'Oswald', sans-serif;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.78rem;
   padding:0 32px;transition:background .3s var(--ease);
 }
 .form button:hover{background:var(--bone)}
-.form-note{font-family:'Oswald',sans-serif;font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bone-dim);margin-top:18px}
-.form-ok{display:none;font-family:'Anton',sans-serif;font-size:1.7rem;color:var(--blood);margin-top:28px;text-transform:uppercase}
+.form-note{font-family:'Oswald', sans-serif;font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bone-dim);margin-top:18px}
+.form-ok{display:none;font-family:'Anton', sans-serif;font-size:1.7rem;color:var(--blood);margin-top:28px;text-transform:uppercase}
 
 /* ============ FOOTER ============ */
 footer{border-top:1px solid var(--line);padding:50px 0 44px}
 footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
 footer img{height:20px;width:auto}
 footer p{font-size:.76rem;color:var(--bone-dim);max-width:62ch}
-footer .sig{font-family:'Oswald',sans-serif;font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bone-dim)}
+footer .sig{font-family:'Oswald', sans-serif;font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bone-dim)}
 
 /* ============ RESPONSIVE ============ */
 @media (max-width:980px){
@@ -364,7 +364,7 @@ footer .sig{font-family:'Oswald',sans-serif;font-size:.64rem;letter-spacing:.22e
 
 <nav id="nav">
   <div class="wrap">
-    <a class="nav-logo" href="#top" aria-label="The Tarantula — home" data-hover>
+    <a class="nav-logo" href="#top" aria-label="The Tarantula, home" data-hover>
       <img src="logo_bone.webp" alt="THE TARANTULA">
     </a>
     <button class="burger" aria-label="Menu" aria-expanded="false" onclick="toggleMenu(this)">☰</button>
@@ -378,7 +378,7 @@ footer .sig{font-family:'Oswald',sans-serif;font-size:.64rem;letter-spacing:.22e
 </nav>
 
 <header id="top">
-  <div class="hero-bg"><img src="hero_art.webp" alt="Drop 001 artwork — Jalin Turner with a tarantula on his shoulder" fetchpriority="high"></div>
+  <div class="hero-bg"><img src="hero_art.webp" alt="Drop 001 artwork, Jalin Turner with a tarantula on his shoulder" fetchpriority="high"></div>
   <div class="hero-scrim"></div>
   <div class="bar-top" aria-hidden="true"></div>
   <div class="bar-bot" aria-hidden="true"></div>
@@ -432,8 +432,8 @@ footer .sig{font-family:'Oswald',sans-serif;font-size:.64rem;letter-spacing:.22e
         <span class="flag">5 Colorways</span>
         <div class="veil"></div>
         <div class="imgbox">
-          <img id="ttvF" src="ttv_black_f.webp" alt="T.T. Venom Tee — vertical wordmark front" loading="lazy">
-          <img id="ttvB" class="alt" src="ttv_black_b.webp" alt="T.T. Venom Tee — blue tarantula back print, VENOM IN EVERY STRIKE" loading="lazy">
+          <img id="ttvF" src="ttv_black_f.webp" alt="T.T. Venom Tee, vertical wordmark front" loading="lazy">
+          <img id="ttvB" class="alt" src="ttv_black_b.webp" alt="T.T. Venom Tee, blue tarantula back print, VENOM IN EVERY STRIKE" loading="lazy">
         </div>
         <div class="info">
           <h3>Venom Oversized Tee</h3>
@@ -453,7 +453,7 @@ footer .sig{font-family:'Oswald',sans-serif;font-size:.64rem;letter-spacing:.22e
         <span class="flag">7 Colorways</span>
         <div class="veil"></div>
         <div class="imgbox">
-          <img id="jtF" src="jt_black_f.webp" alt="JT SnowWashed Oversized Tee — JT crest and spider chest print" loading="lazy">
+          <img id="jtF" src="jt_black_f.webp" alt="JT SnowWashed Oversized Tee, JT crest and spider chest print" loading="lazy">
           </div>
         <div class="info">
           <h3>JT SnowWashed Oversized Tee</h3>
@@ -475,8 +475,8 @@ footer .sig{font-family:'Oswald',sans-serif;font-size:.64rem;letter-spacing:.22e
         <span class="flag">3 Colorways</span>
         <div class="veil"></div>
         <div class="imgbox">
-          <img id="vhF" src="vh_black_f.webp" alt="Venom Hoodie, black — vertical THE TARANTULA chest print" loading="lazy">
-          <img id="vhB" class="alt" src="vh_black_b.webp" alt="Venom Hoodie, black — blue tarantula back print, VENOM IN EVERY STRIKE" loading="lazy">
+          <img id="vhF" src="vh_black_f.webp" alt="Venom Hoodie, black, vertical THE TARANTULA chest print" loading="lazy">
+          <img id="vhB" class="alt" src="vh_black_b.webp" alt="Venom Hoodie, black, blue tarantula back print, VENOM IN EVERY STRIKE" loading="lazy">
         </div>
         <div class="info">
           <h3>Venom Hoodie</h3>
@@ -494,7 +494,7 @@ footer .sig{font-family:'Oswald',sans-serif;font-size:.64rem;letter-spacing:.22e
         <span class="flag">5 Colorways</span>
         <div class="veil"></div>
         <div class="imgbox">
-          <img id="sigWF" src="sig_black_f.webp" alt="White Signature Tee — THE TARANTULA white ink chest print" loading="lazy">
+          <img id="sigWF" src="sig_black_f.webp" alt="White Signature Tee, THE TARANTULA white ink chest print" loading="lazy">
         </div>
         <div class="info">
           <h3>Signature Oversized Tee · White Ink</h3>
@@ -514,7 +514,7 @@ footer .sig{font-family:'Oswald',sans-serif;font-size:.64rem;letter-spacing:.22e
         <span class="flag">5 Colorways</span>
         <div class="veil"></div>
         <div class="imgbox">
-          <img id="sigBF" src="sig_white_f.webp" alt="Black Signature Tee — THE TARANTULA black ink chest print" loading="lazy">
+          <img id="sigBF" src="sig_white_f.webp" alt="Black Signature Tee, THE TARANTULA black ink chest print" loading="lazy">
         </div>
         <div class="info">
           <h3>Signature Oversized Tee · Black Ink</h3>
@@ -535,7 +535,7 @@ footer .sig{font-family:'Oswald',sans-serif;font-size:.64rem;letter-spacing:.22e
         <span class="flag">5 Colorways</span>
         <div class="veil"></div>
         <div class="imgbox">
-          <img id="shWF" src="sighood_black_f.webp" alt="White Signature Hoodie — THE TARANTULA white ink chest print" loading="lazy">
+          <img id="shWF" src="sighood_black_f.webp" alt="White Signature Hoodie, THE TARANTULA white ink chest print" loading="lazy">
         </div>
         <div class="info">
           <h3>Signature Hoodie · White Ink</h3>
@@ -555,7 +555,7 @@ footer .sig{font-family:'Oswald',sans-serif;font-size:.64rem;letter-spacing:.22e
         <span class="flag">3 Colorways</span>
         <div class="veil"></div>
         <div class="imgbox">
-          <img id="shBF" src="sighood_white_f.webp" alt="Black Signature Hoodie — THE TARANTULA black ink chest print" loading="lazy">
+          <img id="shBF" src="sighood_white_f.webp" alt="Black Signature Hoodie, THE TARANTULA black ink chest print" loading="lazy">
         </div>
         <div class="info">
           <h3>Signature Hoodie · Black Ink</h3>
@@ -573,8 +573,8 @@ footer .sig{font-family:'Oswald',sans-serif;font-size:.64rem;letter-spacing:.22e
         <span class="flag">Front + Back</span>
         <div class="veil"></div>
         <div class="imgbox">
-          <img id="calmF" src="calm_black_f.webp" alt="Calm Is Deadly Portrait Tee — CALM IS DEADLY. chest print" loading="lazy">
-          <img id="calmB" class="alt" src="calm_black_b.webp" alt="Calm Is Deadly Portrait Tee — portrait back print, VENOM IN EVERY STRIKE" loading="lazy">
+          <img id="calmF" src="calm_black_f.webp" alt="Calm Is Deadly Portrait Tee, CALM IS DEADLY. chest print" loading="lazy">
+          <img id="calmB" class="alt" src="calm_black_b.webp" alt="Calm Is Deadly Portrait Tee, portrait back print, VENOM IN EVERY STRIKE" loading="lazy">
         </div>
         <div class="info">
           <h3>Calm.Is.Deadly Portrait Oversized Tee</h3>
@@ -592,8 +592,8 @@ footer .sig{font-family:'Oswald',sans-serif;font-size:.64rem;letter-spacing:.22e
         <span class="flag">Front + Back</span>
         <div class="veil"></div>
         <div class="imgbox">
-          <img id="calmhF" src="calmh_black_f.webp" alt="Calm Is Deadly Portrait Hoodie — CALM IS DEADLY. chest print" loading="lazy">
-          <img id="calmhB" class="alt" src="calmh_black_b.webp" alt="Calm Is Deadly Portrait Hoodie — portrait back print, VENOM IN EVERY STRIKE" loading="lazy">
+          <img id="calmhF" src="calmh_black_f.webp" alt="Calm Is Deadly Portrait Hoodie, CALM IS DEADLY. chest print" loading="lazy">
+          <img id="calmhB" class="alt" src="calmh_black_b.webp" alt="Calm Is Deadly Portrait Hoodie, portrait back print, VENOM IN EVERY STRIKE" loading="lazy">
         </div>
         <div class="info">
           <h3>Calm.Is.Deadly Portrait Hoodie</h3>
@@ -610,8 +610,8 @@ footer .sig{font-family:'Oswald',sans-serif;font-size:.64rem;letter-spacing:.22e
         <span class="flag">Front + Back</span>
         <div class="veil"></div>
         <div class="imgbox">
-          <img id="tankF" src="tank_black_f.webp" alt="Calm Is Deadly Tank, black — CALM IS DEADLY. chest print" loading="lazy">
-          <img id="tankB" class="alt" src="tank_black_b.webp" alt="Calm Is Deadly Tank, black — JT web crest and blue Gooty tarantula back print" loading="lazy">
+          <img id="tankF" src="tank_black_f.webp" alt="Calm Is Deadly Tank, black, CALM IS DEADLY. chest print" loading="lazy">
+          <img id="tankB" class="alt" src="tank_black_b.webp" alt="Calm Is Deadly Tank, black, JT web crest and blue Gooty tarantula back print" loading="lazy">
         </div>
         <div class="info">
           <h3>Calm.Is.Deadly Tank</h3>
@@ -624,7 +624,7 @@ footer .sig{font-family:'Oswald',sans-serif;font-size:.64rem;letter-spacing:.22e
         <span class="flag">Poster</span>
         <div class="veil"></div>
         <div class="imgbox">
-          <img src="poster_killlist.webp" alt="Kill List poster — blue Gooty tarantula, Jalin Turner fight record, VENOM IN EVERY STRIKE" loading="lazy">
+          <img src="poster_killlist.webp" alt="Kill List poster, blue Gooty tarantula, Jalin Turner fight record, VENOM IN EVERY STRIKE" loading="lazy">
         </div>
         <div class="info">
           <h3>Kill List Poster</h3>
@@ -637,7 +637,7 @@ footer .sig{font-family:'Oswald',sans-serif;font-size:.64rem;letter-spacing:.22e
         <span class="flag">Poster</span>
         <div class="veil"></div>
         <div class="imgbox">
-          <img src="poster2.webp" alt="The Tarantula poster — Jalin Turner hanging upside down over the LA skyline, VENOM IN EVERY STRIKE" loading="lazy">
+          <img src="poster2.webp" alt="The Tarantula poster, Jalin Turner hanging upside down over the LA skyline, VENOM IN EVERY STRIKE" loading="lazy">
         </div>
         <div class="info">
           <h3>Upside Down Poster</h3>
@@ -661,7 +661,7 @@ footer .sig{font-family:'Oswald',sans-serif;font-size:.64rem;letter-spacing:.22e
             <span class="price">$110</span><span class="save">You save $55</span>
           </div>
           <button class="btn btn-solid" data-hover data-magnet onclick="shop('full-capsule')"><span>Buy The Set</span></button>
-          <div class="bnote">All three pieces in one order. Made to order — ships in ~5 business days, allow ~2 weeks to arrive.</div>
+          <div class="bnote">All three pieces in one order. Made to order, ships in ~5 business days, allow ~2 weeks to arrive.</div>
         </div>
         <div class="imgs" aria-hidden="true">
           <img src="ttv_black_f.webp" alt="" loading="lazy">
@@ -801,19 +801,19 @@ function runIntro(){
     return;
   }
   const tl = gsap.timeline();
-  tl.to(progress,{v:100,duration:1.1,ease:'power2.inOut',
+  tl.to(progress,{v:100, duration:1.1, ease:'power2.inOut',
       onUpdate:()=>{count.textContent=Math.round(progress.v);lbar.style.transform=`scaleX(${progress.v/100})`}})
-    .to('#loader',{yPercent:-100,duration:.9,ease:'expo.inOut'},'+=.15')
+    .to('#loader',{yPercent:-100, duration:.9, ease:'expo.inOut'},'+=.15')
     .set('#loader',{display:'none'})
     .add(()=>document.body.classList.remove('locked'),'<')
-    .to('.bar-top',{scaleY:0,duration:1.2,ease:'expo.inOut'},'-=.55')
-    .to('.bar-bot',{scaleY:0,duration:1.2,ease:'expo.inOut'},'<')
-    .to('h1 .ch',{y:0,duration:1.1,ease:'expo.out',stagger:.022},'-=.6')
-    .to('.hero-kicker',{opacity:1,duration:.7},'-=.7')
-    .to('.hero-copy',{opacity:1,duration:.7},'-=.5')
-    .to('.cta-row',{opacity:1,duration:.7},'-=.45')
-    .to('.hero-meta',{opacity:1,duration:.7},'-=.4')
-    .to('.scroll-cue,.hero-credit',{opacity:1,duration:.9},'-=.3');
+    .to('.bar-top',{scaleY:0, duration:1.2, ease:'expo.inOut'},'-=.55')
+    .to('.bar-bot',{scaleY:0, duration:1.2, ease:'expo.inOut'},'<')
+    .to('h1 .ch',{y:0, duration:1.1, ease:'expo.out', stagger:.022},'-=.6')
+    .to('.hero-kicker',{opacity:1, duration:.7},'-=.7')
+    .to('.hero-copy',{opacity:1, duration:.7},'-=.5')
+    .to('.cta-row',{opacity:1, duration:.7},'-=.45')
+    .to('.hero-meta',{opacity:1, duration:.7},'-=.4')
+    .to('.scroll-cue,.hero-credit',{opacity:1, duration:.9},'-=.3');
 }
 let introRan=false;
 function introOnce(){ if(introRan) return; introRan=true; runIntro(); }
@@ -823,39 +823,39 @@ else { heroImg.addEventListener('load', introOnce); heroImg.addEventListener('er
 /* ---------- cinematic scroll scenes ---------- */
 if (hasGsap && !reduced){
   /* hero parallax + fade */
-  gsap.to('.hero-bg',{yPercent:12,scale:1.08,ease:'none',
-    scrollTrigger:{trigger:'header',start:'top top',end:'bottom top',scrub:true}});
-  gsap.to('.hero-content',{yPercent:-14,opacity:.15,ease:'none',
-    scrollTrigger:{trigger:'header',start:'top top',end:'75% top',scrub:true}});
+  gsap.to('.hero-bg',{yPercent:12, scale:1.08, ease:'none',
+    scrollTrigger:{trigger:'header', start:'top top', end:'bottom top', scrub:true}});
+  gsap.to('.hero-content',{yPercent:-14, opacity:.15, ease:'none',
+    scrollTrigger:{trigger:'header', start:'top top', end:'75% top', scrub:true}});
 
   /* section heading line reveals */
   document.querySelectorAll('.sec-head h2, #notify h2').forEach(h=>{
-    gsap.to(h.querySelectorAll('.inner'),{y:0,duration:1.1,ease:'expo.out',stagger:.09,
-      scrollTrigger:{trigger:h,start:'top 82%',once:true}});
+    gsap.to(h.querySelectorAll('.inner'),{y:0, duration:1.1, ease:'expo.out', stagger:.09,
+      scrollTrigger:{trigger:h, start:'top 82%', once:true}});
   });
 
   /* generic reveals */
-  ScrollTrigger.batch('.reveal',{start:'top 88%',once:true,
-    onEnter:els=>gsap.to(els,{opacity:1,y:0,duration:1,ease:'expo.out',stagger:.08})});
+  ScrollTrigger.batch('.reveal',{start:'top 88%', once:true,
+    onEnter:els=>gsap.to(els,{opacity:1, y:0, duration:1, ease:'expo.out', stagger:.08})});
 
   /* product card veils wipe up */
-  document.querySelectorAll('.card .veil').forEach((v,i)=>{
-    gsap.to(v,{scaleY:0,duration:1.1,ease:'expo.inOut',delay:(i%3)*.12,
-      scrollTrigger:{trigger:v.closest('.card'),start:'top 85%',once:true}});
+  document.querySelectorAll('.card .veil').forEach((v, i)=>{
+    gsap.to(v,{scaleY:0, duration:1.1, ease:'expo.inOut', delay:(i%3)*.12,
+      scrollTrigger:{trigger:v.closest('.card'), start:'top 85%', once:true}});
   });
 
   /* idx numbers drift */
   document.querySelectorAll('.idx').forEach(n=>{
-    gsap.fromTo(n,{yPercent:18},{yPercent:-14,ease:'none',
-      scrollTrigger:{trigger:n.parentElement,start:'top bottom',end:'bottom top',scrub:true}});
+    gsap.fromTo(n,{yPercent:18},{yPercent:-14, ease:'none',
+      scrollTrigger:{trigger:n.parentElement, start:'top bottom', end:'bottom top', scrub:true}});
   });
 
-  /* pinned fight clock — scroll scrubs 0:00 → 1:40 */
+  /* pinned fight clock, scroll scrubs 0:00 → 1:40 */
   const clockT = document.getElementById('clocktime'), clockB = document.getElementById('clockbar');
   const isMobile = matchMedia('(max-width: 768px)').matches;
   if (!isMobile){
     ScrollTrigger.create({
-      trigger:'.clock-scene',start:'center center',end:'+=1200',pin:true,scrub:.4,
+      trigger:'.clock-scene', start:'center center', end:'+=1200', pin:true, scrub:.4,
       onUpdate:self=>{
         const s = Math.round(100*self.progress);
         clockT.textContent = Math.floor(s/60)+':'+String(s%60).padStart(2,'0');
@@ -863,8 +863,8 @@ if (hasGsap && !reduced){
       }
     });
   } else {
-    ScrollTrigger.create({trigger:'.clock',start:'top 75%',once:true,onEnter:()=>{
-      gsap.to({s:0},{s:100,duration:1.8,ease:'power3.out',onUpdate:function(){
+    ScrollTrigger.create({trigger:'.clock', start:'top 75%', once:true, onEnter:()=>{
+      gsap.to({s:0},{s:100, duration:1.8, ease:'power3.out', onUpdate:function(){
         const s=Math.round(this.targets()[0].s);
         clockT.textContent=Math.floor(s/60)+':'+String(s%60).padStart(2,'0');
         clockB.style.width=(100/300*100*s/100)+'%';
@@ -873,20 +873,20 @@ if (hasGsap && !reduced){
   }
 
   /* story parallax */
-  gsap.to('.story-art .spider',{yPercent:-14,rotate:-5,ease:'none',
-    scrollTrigger:{trigger:'#story',start:'top bottom',end:'bottom top',scrub:true}});
-  gsap.to('.story-art .count',{yPercent:22,ease:'none',
-    scrollTrigger:{trigger:'#story',start:'top bottom',end:'bottom top',scrub:true}});
+  gsap.to('.story-art .spider',{yPercent:-14, rotate:-5, ease:'none',
+    scrollTrigger:{trigger:'#story', start:'top bottom', end:'bottom top', scrub:true}});
+  gsap.to('.story-art .count',{yPercent:22, ease:'none',
+    scrollTrigger:{trigger:'#story', start:'top bottom', end:'bottom top', scrub:true}});
 
   /* stats count-up */
   document.querySelectorAll('[data-count]').forEach(el=>{
-    ScrollTrigger.create({trigger:el,start:'top 85%',once:true,onEnter:()=>{
-      gsap.to({v:0},{v:+el.dataset.count,duration:1.4,ease:'power3.out',
+    ScrollTrigger.create({trigger:el, start:'top 85%', once:true, onEnter:()=>{
+      gsap.to({v:0},{v:+el.dataset.count, duration:1.4, ease:'power3.out',
         onUpdate:function(){el.textContent=Math.round(this.targets()[0].v)}});
     }});
   });
   document.querySelectorAll('.stat').forEach(el=>{
-    ScrollTrigger.create({trigger:el,start:'top 85%',once:true,onEnter:()=>el.classList.add('in')});
+    ScrollTrigger.create({trigger:el, start:'top 85%', once:true, onEnter:()=>el.classList.add('in')});
   });
 } else {
   /* no-gsap fallback: IO reveals + instant counts */
@@ -924,7 +924,7 @@ var jtColor='Black';
     new Image().src='jt_'+c+'_f.webp';
     
   });
-  sw.addEventListener('click',function(e){
+  sw.addEventListener('click', function(e){
     var el=e.target.closest('.sw'); if(!el) return;
     e.preventDefault(); e.stopPropagation();
     sw.querySelectorAll('.sw').forEach(function(s){s.classList.remove('on')});
@@ -933,7 +933,7 @@ var jtColor='Black';
     jtColor=el.getAttribute('title');
     f.src='jt_'+c+'_f.webp';
     b.src='jt_'+c+'_b.webp';
-    f.alt='JT SnowWashed Oversized Tee, '+jtColor+' — front';
+    f.alt='JT SnowWashed Oversized Tee, '+jtColor+', front';
     
   });
 })();
@@ -944,7 +944,7 @@ function mkPicker(swId, imgId, setter, label){
   var sw=document.getElementById(swId); if(!sw) return;
   var f=document.getElementById(imgId);
   sw.querySelectorAll('.sw').forEach(function(el){ new Image().src=el.dataset.i; });
-  sw.addEventListener('click',function(e){
+  sw.addEventListener('click', function(e){
     var el=e.target.closest('.sw'); if(!el) return;
     e.preventDefault(); e.stopPropagation();
     sw.querySelectorAll('.sw').forEach(function(s){s.classList.remove('on')});
@@ -958,7 +958,7 @@ var calmhColor='Black';
   var sw=document.getElementById('calmhSw'); if(!sw) return;
   var f=document.getElementById('calmhF'), b=document.getElementById('calmhB');
   sw.querySelectorAll('.sw').forEach(function(el){ new Image().src=el.dataset.i; new Image().src=el.dataset.b; });
-  sw.addEventListener('click',function(e){
+  sw.addEventListener('click', function(e){
     var el=e.target.closest('.sw'); if(!el) return;
     e.preventDefault(); e.stopPropagation();
     sw.querySelectorAll('.sw').forEach(function(s){s.classList.remove('on')});
@@ -971,7 +971,7 @@ var ttvColor='Black';
   var sw=document.getElementById('ttvSw'); if(!sw) return;
   var f=document.getElementById('ttvF'), b=document.getElementById('ttvB');
   sw.querySelectorAll('.sw').forEach(function(el){ new Image().src=el.dataset.i; new Image().src=el.dataset.b; });
-  sw.addEventListener('click',function(e){
+  sw.addEventListener('click', function(e){
     var el=e.target.closest('.sw'); if(!el) return;
     e.preventDefault(); e.stopPropagation();
     sw.querySelectorAll('.sw').forEach(function(s){s.classList.remove('on')});
@@ -984,7 +984,7 @@ var calmColor='Black';
   var sw=document.getElementById('calmSw'); if(!sw) return;
   var f=document.getElementById('calmF'), b=document.getElementById('calmB');
   sw.querySelectorAll('.sw').forEach(function(el){ new Image().src=el.dataset.i; new Image().src=el.dataset.b; });
-  sw.addEventListener('click',function(e){
+  sw.addEventListener('click', function(e){
     var el=e.target.closest('.sw'); if(!el) return;
     e.preventDefault(); e.stopPropagation();
     sw.querySelectorAll('.sw').forEach(function(s){s.classList.remove('on')});
@@ -997,31 +997,31 @@ var vhColor='Black';
   var sw=document.getElementById('vhSw'); if(!sw) return;
   var f=document.getElementById('vhF'), b=document.getElementById('vhB');
   sw.querySelectorAll('.sw').forEach(function(el){ new Image().src=el.dataset.i; new Image().src=el.dataset.b; });
-  sw.addEventListener('click',function(e){
+  sw.addEventListener('click', function(e){
     var el=e.target.closest('.sw'); if(!el) return;
     e.preventDefault(); e.stopPropagation();
     sw.querySelectorAll('.sw').forEach(function(s){s.classList.remove('on')});
     el.classList.add('on'); vhColor=el.getAttribute('title');
     f.src=el.dataset.i; b.src=el.dataset.b;
-    f.alt='Venom Hoodie, '+vhColor+' — vertical THE TARANTULA chest print';
-    b.alt='Venom Hoodie, '+vhColor+' — blue tarantula back print, VENOM IN EVERY STRIKE';
+    f.alt='Venom Hoodie, '+vhColor+', vertical THE TARANTULA chest print';
+    b.alt='Venom Hoodie, '+vhColor+', blue tarantula back print, VENOM IN EVERY STRIKE';
   });
 })();
-mkPicker('sigWSw','sigWF',function(c){sigWColor=c},'Signature Tee White Ink');
-mkPicker('sigBSw','sigBF',function(c){sigBColor=c},'Signature Tee Black Ink');
-mkPicker('shWSw','shWF',function(c){shWColor=c},'Signature Hoodie White Ink');
-mkPicker('shBSw','shBF',function(c){shBColor=c},'Signature Hoodie Black Ink');
+mkPicker('sigWSw','sigWF', function(c){sigWColor=c},'Signature Tee White Ink');
+mkPicker('sigBSw','sigBF', function(c){sigBColor=c},'Signature Tee Black Ink');
+mkPicker('shWSw','shWF', function(c){shWColor=c},'Signature Hoodie White Ink');
+mkPicker('shBSw','shBF', function(c){shBColor=c},'Signature Hoodie Black Ink');
 
 /* ---------- custom cursor ---------- */
 if (matchMedia('(pointer:fine)').matches && !reduced){
   const cur=document.querySelector('.cursor'), dot=document.querySelector('.cursor-dot');
-  let mx=0,my=0,cx=0,cy=0;
-  addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;
+  let mx=0, my=0, cx=0, cy=0;
+  addEventListener('mousemove', e=>{mx=e.clientX;my=e.clientY;
     dot.style.transform=`translate(${mx-2.5}px,${my-2.5}px)`;});
   (function loop(){cx+=(mx-cx)*.16;cy+=(my-cy)*.16;
     cur.style.transform=`translate(${cx-(cur.classList.contains('hot')?32:19)}px,${cy-(cur.classList.contains('hot')?32:19)}px)`;
     requestAnimationFrame(loop);})();
-  document.querySelectorAll('a,button,[data-hover]').forEach(el=>{
+  document.querySelectorAll('a, button,[data-hover]').forEach(el=>{
     el.addEventListener('mouseenter',()=>cur.classList.add('hot'));
     el.addEventListener('mouseleave',()=>cur.classList.remove('hot'));
   });
@@ -1030,18 +1030,18 @@ if (matchMedia('(pointer:fine)').matches && !reduced){
 /* ---------- magnetic buttons ---------- */
 if (matchMedia('(pointer:fine)').matches && !reduced && hasGsap){
   document.querySelectorAll('[data-magnet]').forEach(el=>{
-    el.addEventListener('mousemove',e=>{
+    el.addEventListener('mousemove', e=>{
       const r=el.getBoundingClientRect();
-      gsap.to(el,{x:(e.clientX-r.left-r.width/2)*.25,y:(e.clientY-r.top-r.height/2)*.35,duration:.4,ease:'power3.out'});
+      gsap.to(el,{x:(e.clientX-r.left-r.width/2)*.25, y:(e.clientY-r.top-r.height/2)*.35, duration:.4, ease:'power3.out'});
     });
-    el.addEventListener('mouseleave',()=>gsap.to(el,{x:0,y:0,duration:.6,ease:'elastic.out(1,.45)'}));
+    el.addEventListener('mouseleave',()=>gsap.to(el,{x:0, y:0, duration:.6, ease:'elastic.out(1,.45)'}));
   });
 }
 
 /* ---------- card tilt ---------- */
 if (matchMedia('(pointer:fine)').matches && !reduced){
   document.querySelectorAll('[data-tilt]').forEach(card=>{
-    card.addEventListener('mousemove',e=>{
+    card.addEventListener('mousemove', e=>{
       const r=card.getBoundingClientRect();
       const rx=((e.clientY-r.top)/r.height-.5)*-7, ry=((e.clientX-r.left)/r.width-.5)*7;
       card.style.transform=`perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`;
@@ -1064,7 +1064,7 @@ addEventListener('scroll',()=>{
 function toggleMenu(btn){
   const links=document.getElementById('navlinks');
   const open=links.classList.toggle('open');
-  btn.setAttribute('aria-expanded',open);
+  btn.setAttribute('aria-expanded', open);
 }
 document.querySelectorAll('#navlinks a').forEach(a=>a.addEventListener('click',()=>{
   document.getElementById('navlinks').classList.remove('open');
@@ -1074,7 +1074,7 @@ document.querySelectorAll('#navlinks a').forEach(a=>a.addEventListener('click',(
 const tick=document.getElementById('ticker');
 tick.innerHTML+=tick.innerHTML;
 
-/* ---------- pre-order + notify (front-end only — wire to store/ESP before launch) ---------- */
+/* ---------- pre-order + notify (front-end only, wire to store/ESP before launch) ---------- */
 var SHOP_BASE='https://shop.jalinturner.com/products/';
 function shop(handle){ if(handle){ window.open(SHOP_BASE+handle,'_blank','noopener'); } }
 /* ---- email capture -----------------------------------------------------
@@ -1103,9 +1103,9 @@ function notifySubmit(ev){
   try{
     var k='tarantula_signups';
     var arr=JSON.parse(localStorage.getItem(k)||'[]');
-    arr.push(payload); localStorage.setItem(k,JSON.stringify(arr));
+    arr.push(payload); localStorage.setItem(k, JSON.stringify(arr));
   }catch(e){}
-  console.log('SIGNUP',payload);
+  console.log('SIGNUP', payload);
 
   if(NOTIFY_ENDPOINT){
     fetch(NOTIFY_ENDPOINT,{
